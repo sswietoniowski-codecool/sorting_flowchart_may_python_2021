@@ -25,8 +25,28 @@ def bubble_sort():
     print(array)
 
 
+def binary_search(value):
+    array = [1, 2, 4, 7, 11, 22, 38, 42, 43]
+    start = 0
+    end = len(array)
+
+    while start <= end:
+        mid = (start + end) // 2
+        if array[mid] == value:
+            return mid
+        else:
+            if array[mid] > value:
+                end = mid - 1
+            else:
+                start = mid + 1
+
+    return -1
+
+
 def main():
     bubble_sort()
+    print(binary_search(7))
+    print(binary_search(8))
 
 
 if __name__ == "__main__":
